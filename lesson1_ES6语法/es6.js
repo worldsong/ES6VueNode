@@ -1,4 +1,7 @@
-let resusts = [1, 2, 3].map(x => x + 2);
-console.log('song')
-console.log(resusts);
-document.body.innerText= resusts;
+{
+    let fruit = 'apple';
+    var drink = 'milk';
+}
+
+console.log(fruit);
+console.log(drink);
