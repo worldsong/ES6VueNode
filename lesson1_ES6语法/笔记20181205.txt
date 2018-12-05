@@ -1,0 +1,53 @@
+就业班的目标：快速进入新前端技术开发体系。--拼接。
+集成。
+时间1个半月--2个月
+ES6+Node+mongodb+ Vuejs 对应的工作是：vuejs开发
+补充ES6扩展、Nodejs扩展【puppeteer】
+react技术线
+移动混合开发、微信开发
+
+学习任务：
+代码、课程、熟练
+http://git.gupaoedu.com/webui-vip
+学习笔记：技术、生活、工作
+
+电话回访：面试、考试
+
+在校期间：热衷数据分析，R;
+
+教学奖、惩：
+奖：就业指导及就业机会。
+惩罚：运动、发微信步数【4000起步】
+
+8：55上课
+--save
+nvm下载：
+https://github.com/coreybutler/nvm-windows/releases
+macOS： https://www.jianshu.com/p/0cfeed299f2a
+1746948032@qq.com
+
+ES6环境测试
+ES6的使用环境
+node、IE、Chrome
+是否兼容查阅：
+http://kangax.github.io/compat-table/es6/
+ES6目前在任意环境都没有做到100%的兼容。
+polyfill+ 特性。
+
+git clone http://git.gupaoedu.com/gp-song/ES6VueNode.git
+
+npm install -g babel-cli
+npm install babel-preset-es2015 --save
+
+Babel直接转化ES6
+babel es6.js --out-file es5.js --presets es2015
+
+使用Browsersync实时刷新页面和Babel-Core实时转换ES6
+编码环境：
+npm install -g browser-sync
+npm install babel-core@5 --save
+
+browser-sync start --server --files "**"
+
+ES6语法精讲：
+let 块级作用域、const 常量、解构数组、解构对象、模板字符串、判断字符串里是否包含其他字符、函数默认参数、展开操作符、剩余操作符、解构参数、函数的名字、箭头函数、对象表达式、对象的属性名、对象的赋值、类 class、get 与 set、静态方法 不需要实例化就可以使用、extends 继承
