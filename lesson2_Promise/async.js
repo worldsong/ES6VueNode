@@ -23,10 +23,10 @@ let prepareTeaLeaves = () => new Promise(resolve => setTimeout(
     , 1 * 1000));  // 1秒钟
 
 console.time('async')
-let makeTea = async function () {
-    var boiledWater = await boilWater();
-    var washedGlass = await washGlass();
-    var teaLeaves = await prepareTeaLeaves();
+let makeTea = async ()=>{
+    await boilWater();
+    await washGlass();
+    await prepareTeaLeaves();
     console.timeEnd('async');
 }
 makeTea();
