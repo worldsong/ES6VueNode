@@ -11,5 +11,8 @@
     "url": "http://git.gupaoedu.com/gp-song/ES6VueNode.git"
   },
   "author": "Song",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
 }
