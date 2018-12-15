@@ -7,7 +7,7 @@ function start(response) {
     exec('tree C:/', {encoding: 'Song', timeout: 10000, maxBuffer: 20000 * 1024}, function (error, stdout, stderr) {
         if(error){
             console.log(error);
-            response.writeHead(500, {"Content-Type": "text/plain"});
+            response.writeHead(500, {"Content-Type": "text/plain;charset=utf-8"});
             response.write("错误500，服务器内部错误。"); // 响应请求，回复文本消息
             response.end(); // 结束响应
         } else {
