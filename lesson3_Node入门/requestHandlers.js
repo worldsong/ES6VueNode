@@ -8,9 +8,9 @@ function start(response) {
     response.end(); // 结束响应
 }
 
-function upload(response) {
+function upload(response, postData) {
     console.log("Request handler 'upload' was called.")
-    var content = "hello upload"
+    var content = "You've sent: " + postData;
     response.writeHead(200, {"Content-Type": "text/plain"});
     response.write(content); // 响应请求，回复文本消息
     response.end(); // 结束响应
