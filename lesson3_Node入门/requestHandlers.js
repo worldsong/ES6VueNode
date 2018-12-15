@@ -12,7 +12,7 @@ function start(response) {
         '</form>' +
         '</body>' +
         '</html>';
-    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
     response.write(body); // 响应请求，回复文本消息
     response.end(); // 结束响应
 }
