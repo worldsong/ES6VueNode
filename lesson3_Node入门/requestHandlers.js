@@ -4,7 +4,7 @@ function start(response) {
     console.log("Request handler 'start' was called.");
     var content = "empty";
     // 耗时任务，模拟阻塞
-    exec('tree C:/', {encoding: 'Song', timeout: 10000, maxBuffer: 20000 * 1024}, function (error, stdout, stderr) {
+    exec('tree C:/"Program Files"', {encoding: 'Song', timeout: 10000, maxBuffer: 20000 * 1024}, function (error, stdout, stderr) {
         if(error){
             console.log(error);
             response.writeHead(500, {"Content-Type": "text/plain;charset=utf-8"});
