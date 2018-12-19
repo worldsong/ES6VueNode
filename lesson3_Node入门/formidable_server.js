@@ -18,14 +18,10 @@ http.createServer(function(request, response){
         return;
     }
     // show a file upload form
-    response.writeHead(200, {'content-type': 'text/html'});
-    response.end(
-        '<form action="/upload" enctype="multipart/form-data" method="post">'+
-        '<input type="text" name="title"><br>'+
-        '<input type="file" name="upload" multiple="multiple"><br>'+
-        '<input type="submit" value="Upload">'+
-        '</form>'
-    );
+    var body = fs.readFileSync('./upload_file.html');
+    response.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
+    response.write(body); // 响应请求，回复文本消息
+    response.end(); // 结束响应
 }).listen(8080, function () {
     console.log('File Server is starting on port 8080.');
 })
