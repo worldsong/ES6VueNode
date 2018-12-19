@@ -4,9 +4,7 @@ var formidable = require('formidable');
 function upload(response, request) {
     if(request.method.toLowerCase() === 'get'){
         console.log("No request handler found for upload in GET.");
-        response.writeHead(404, {"Content-Type": "text/plain"}); // 响应“404”错误
-        var content =  "404 Not found";
-        response.write(content); // 响应主体中发送文本消息
+        response.writeHead(301, {"Location": "/start"}); // 响应“301”重定向
         response.end(); // 结束响应
     } else {
         console.log("Request handler 'upload' was called.")
