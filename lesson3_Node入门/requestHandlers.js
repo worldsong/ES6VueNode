@@ -1,5 +1,6 @@
 var fs = require('fs');
 var querystring = require('querystring');
+var formidable = require('formidable');
 
 function start(response) {
     console.log("Request handler 'start' was called.");
@@ -9,15 +10,23 @@ function start(response) {
     response.end(); // 结束响应
 }
 
-function upload(response, postData) {
+function upload(response, request) {
     console.log("Request handler 'upload' was called.")
-    var content = "You've sent: " + querystring.parse(postData).text;
-    response.writeHead(200, {"Content-Type": "text/plain;charset=utf-8"});
-    response.write(content); // 响应请求，回复文本消息
-    response.end(); // 结束响应
+    var form = new formidable.IncomingForm();
+    form.uploadDir = 'public/upload';
+    console.log('about to parse');
+    form.parse(request, function (err, fields, files) {
+        console.log("parsing done");
+        console.log(files)
+        // 从缓存目录（public/upload）拷贝文件
+        fs.renameSync(files.MyFile.path, "tmp/test.png");
+        response.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
+        response.write('received image:<br/>');
+        response.end("<img src ='/show'>");
+    })
 }
 
-function show(response, postData) {
+function show(response) {
     console.log("Request handler 'show' was called.")
     fs.readFile("tmp/test.png", "binary", function (err, file) {
         if(err){
