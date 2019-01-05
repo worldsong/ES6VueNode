@@ -42,7 +42,6 @@ function getNovel(url) {
                     console.log(err);
                 }else{
                     console.log('Novel is saved.');
-                    mongoose.disconnect();
                 }
             });
             getNovel(realURLNext)
