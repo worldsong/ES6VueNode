@@ -13,6 +13,14 @@
     <!-- Reference to Vue.js library -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
+    <!-- Script Element for our Template -->
+    <script id="myTemplate" type="x-template">
+        <div>
+            From Script Element Template: {{ propertyName }}
+        </div>
+    </script>
+
+
     <!-- Script Element for our first App -->
     <script>
         var app = new Vue({
@@ -20,7 +28,7 @@
             data: {
                 propertyName: "Hello from Getting to Know Vue.js! "
             },
-            template: '<div><h1>{{ propertyName }}</h1></div><div>song</div>'
+            template: '#myTemplate'
         })
     </script>
 </body>

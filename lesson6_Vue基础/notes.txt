@@ -28,6 +28,7 @@ template 属性：
 必须要有且仅有一个根元素，
 Vue使用template属性值的字符串生成DOM并将它渲染到页面上。
 它将替换Vue实例挂载点的所有HTML元素。
-
+（如<script id="myTemplate" type="x-template">），注意作为模板使用的元素应放在声明app之前。
+也可以使用<template>元素替换<script>元素，注意浏览器是否兼容。
 
 
