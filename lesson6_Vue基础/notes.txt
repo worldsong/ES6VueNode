@@ -31,4 +31,12 @@ Vue使用template属性值的字符串生成DOM并将它渲染到页面上。
 （如<script id="myTemplate" type="x-template">），注意作为模板使用的元素应放在声明app之前。
 也可以使用<template>元素替换<script>元素，注意浏览器是否兼容。
 
+render 属性：
+render 函数也可以创建模板来生成Vue DOM。
+优先级高于template属性和HTML模板。
+更多的内容后面再讲。
+
+data 属性：
+
+
 

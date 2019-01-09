@@ -7,19 +7,11 @@
 <body>
     <!-- Div to Mount App -->
     <div id="app">
-        This will be replaced!
+        {{ propertyName }}
     </div>
 
     <!-- Reference to Vue.js library -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-    <!-- Script Element for our Template -->
-    <script id="myTemplate" type="x-template">
-        <div>
-            From Script Element Template: {{ propertyName }}
-        </div>
-    </script>
-
 
     <!-- Script Element for our first App -->
     <script>
@@ -28,7 +20,6 @@
             data: {
                 propertyName: "Hello from Getting to Know Vue.js! "
             },
-            template: '#myTemplate'
         })
     </script>
 </body>
