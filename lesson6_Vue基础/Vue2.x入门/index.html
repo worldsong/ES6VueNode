@@ -7,7 +7,9 @@
 <body>
     <!-- Div to Mount App -->
     <div id="app">
-        {{ propertyName }}
+        <p>emptyObject: {{ emptyObject }}</p>
+        <p>emptyString: {{ emptyString }}</p>
+        <p>nullProperty: {{ nullProperty }}</p>
     </div>
 
     <!-- Reference to Vue.js library -->
@@ -18,7 +20,9 @@
         var app = new Vue({
             el: '#app',
             data: {
-                propertyName: "Hello from Getting to Know Vue.js! "
+                emptyObject: {},
+                emptyString: '',
+                nullProperty: null
             },
         })
     </script>
