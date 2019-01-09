@@ -23,6 +23,8 @@ el 属性：
 如果没有提供 template属性和render属性，则作为挂载点的HTML将被作为渲染页面DOM的模板。
 用于渲染生成页面的DOM不是挂载点的HTML创建的DOM，而是由Vue系统创建生成的DOM，所以数据属性才得以渲染到页面上。
 
+template 属性：
+字符串，
 
 
 
