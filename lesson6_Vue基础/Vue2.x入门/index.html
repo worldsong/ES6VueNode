@@ -7,9 +7,7 @@
 <body>
     <!-- Div to Mount App -->
     <div id="app">
-        <p>emptyObject: {{ emptyObject }}</p>
-        <p>emptyString: {{ emptyString }}</p>
-        <p>nullProperty: {{ nullProperty }}</p>
+
     </div>
 
     <!-- Reference to Vue.js library -->
@@ -20,10 +18,15 @@
         var app = new Vue({
             el: '#app',
             data: {
-                emptyObject: {},
-                emptyString: '',
-                nullProperty: null
+                propertyName: 'Hello from Getting to Know Vue.js!',
+                _propertyName: 'This will not be added to the reactive system.',
+                $propertyName: 'This will not be added to the reactive system.'
             },
+            template: `<div>
+                    <div>{{ propertyName }}</div>
+                    <div>{{ _propertyName }}</div>
+                    <div>{{ $propertyName }}</div>
+                </div>`
         })
     </script>
 </body>
