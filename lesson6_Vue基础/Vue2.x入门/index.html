@@ -7,7 +7,7 @@
 <body>
     <!-- Div to Mount App -->
     <div id="app">
-        {{propertyName}}
+        This will be replaced!
     </div>
 
     <!-- Reference to Vue.js library -->
@@ -19,7 +19,8 @@
             el: '#app',
             data: {
                 propertyName: "Hello from Getting to Know Vue.js! "
-            }
+            },
+            template: '<div><h1>{{ propertyName }}</h1></div><div>song</div>'
         })
     </script>
 </body>
