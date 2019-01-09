@@ -16,6 +16,10 @@ npm install -g @vue/cli-service-global
 创建一个App.vue
 运行 vue serve -o
 
+Vue.js基础
+el 属性：
+指定Vue实例在页面上的挂载位置。
+它的值可以是：字符串，一个CSS选择器（如#app）; 或者是HTMLElement实例。
 
 
 
