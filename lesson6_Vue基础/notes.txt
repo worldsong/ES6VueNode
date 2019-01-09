@@ -19,7 +19,11 @@ npm install -g @vue/cli-service-global
 Vue.js基础
 el 属性：
 指定Vue实例在页面上的挂载位置。
-它的值可以是：字符串，一个CSS选择器（如#app）; 或者是HTMLElement实例。
+它的值可以是：字符串，一个CSS选择器（如#app）; 或者是HTMLElement实例。（如var element = document.getElementById('app');）
+如果没有提供 template属性和render属性，则作为挂载点的HTML将被作为渲染页面DOM的模板。
+用于渲染生成页面的DOM不是挂载点的HTML创建的DOM，而是由Vue系统创建生成的DOM，所以数据属性才得以渲染到页面上。
+
+
 
 
 
