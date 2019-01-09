@@ -15,10 +15,11 @@
 
     <!-- Script Element for our first App -->
     <script>
+        var element = document.getElementById('app');
         var app = new Vue({
-            el: '#app',
+            el: element,
             data: {
-                propertyName: "Hello from Getting to Know Vue.js! This was mounted by passing in an CSS Selector"
+                propertyName: "Hello from Getting to Know Vue.js! This was mounted by passing in an HTMLElement"
             }
         })
     </script>
