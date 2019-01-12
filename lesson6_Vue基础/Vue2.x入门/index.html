@@ -6,27 +6,12 @@
 </head>
 <body>
     <!-- Div to Mount App -->
-    <div id="app">
-
-    </div>
+    <div id="app"></div>
 
     <!-- Reference to Vue.js library -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <!-- Script Element for our first App -->
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                someHTML: '<h1 style="color:#41b883; background- color:#35495e;"> Getting to Know Vue.js</h1>'
-            },
-            template: `
-                    <div>
-                        <div>{{ someHTML }}</div>
-                        <div v-html="someHTML"></div>
-                    </div>
-            `
-        })
-    </script>
+    <script src="./app.js"></script>
 </body>
 </html>
