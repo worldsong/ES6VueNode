@@ -55,5 +55,6 @@ methods 属性：
 要正确使用methods【过程、逻辑】和computed属性【结果、可缓存】。
 如果你要渲染的数据需要经过计算，则配置computed属性更合适。
 
-
+computed 属性：
+与methods属性类似，区别在于computed属性会缓存计算结果，仅当改变时才更新。
 
