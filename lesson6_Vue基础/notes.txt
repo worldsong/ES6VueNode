@@ -48,3 +48,6 @@ Vue应用启动后不能添加新的数据项到响应式系统中，也不会�
 如果确实包含以$或_开头的属性，可以使用Vue实例的 $data 属性访问。
 可以使用 app.$data.propertyName访问原始数据对象
 也可以使用 this.$data.propertyName 访问。
+
+methods 属性：
+使用methods属性可以增强应用的编程特色，JavaScript的编程逻辑得以发扬光大。

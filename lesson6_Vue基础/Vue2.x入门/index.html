@@ -17,16 +17,11 @@
     <script>
         var app = new Vue({
             el: '#app',
-            data: {
-                propertyName: 'Hello from Getting to Know Vue.js!',
-                _propertyName: 'This will not be added to the reactive system.',
-                $propertyName: 'This will not be added to the reactive system.'
-            },
-            template: `<div>
-                    <div>{{ propertyName }}</div>
-                    <div>{{ _propertyName }}</div>
-                    <div>{{ $propertyName }}</div>
-                </div>`
+            methods: {
+                userClickedAButton: function () {
+                    console.log('Something Cool!')
+                }
+            }
         })
     </script>
 </body>
