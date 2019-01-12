@@ -17,9 +17,13 @@
     <script>
         var app = new Vue({
             el: '#app',
+            data: {
+                text: 'Getting to Know Vue.js'
+            },
+            template: `<div>{{capitalizeText()}}</div>`,
             methods: {
-                userClickedAButton: function () {
-                    console.log('Something Cool!')
+                capitalizeText: function () {
+                    return this.text.toUpperCase();
                 }
             }
         })
