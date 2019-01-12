@@ -18,17 +18,11 @@
         var app = new Vue({
             el: '#app',
             data: {
-                yes: 'Yes it is!',
-                no: 'No it is not!',
-                falseValue: false
+                myName: 'Song'
             },
             template: `
                     <div>
-                        <div>{{ 1 + 1}}</div>
-                        <div>{{ falseValue === false ? yes: no}}</div>
-                        <div>{{ 1 == 2 ? yes : no }}</div>
-                        <div>{{ 1 + 1 + 1 > 2 ? yes : no }}</div>
-                        <div>{{ 'Getting to Know Vue.js'.toUpperCase() }}</div>
+                        <div v-bind:name="myName"></div>
                     </div>
             `
         })
