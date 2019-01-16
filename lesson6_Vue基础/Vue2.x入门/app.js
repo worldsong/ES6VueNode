@@ -35,6 +35,16 @@ var vm = new Vue({
         ]
     },
     methods: {
+        set: function () {
+          var indexToReplace = 0;
+          var newBook = {
+              title: 'Newer Entertaining Kids Book',
+              price: 4.99,
+              id: 0,
+              genres: ['kids', 'fiction']
+          };
+          Vue.set(this.books, indexToReplace, newBook)
+        },
         teenFilter: function () {
             this.books = this.books.filter(book => {
                 return (
