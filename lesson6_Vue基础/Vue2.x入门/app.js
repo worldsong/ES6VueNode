@@ -38,7 +38,10 @@ var app = new Vue({
             <div>
                  <ul>
                      <li v-for="book in books" :key="book.id">
-                        {{book}}
+                        <p><Strong>Id: </Strong> {{ book.id }}</p>
+                        <p><Strong>Title: </Strong> {{ book.title }}</p>
+                        <p><Strong>Price: </Strong> {{ book.price }}</p>
+                        <p><Strong>Genres: </Strong> <span v-for="genre in book.genres">{{genre}}</span></p>
                      </li>
                 </ul>   
             </div>                    
