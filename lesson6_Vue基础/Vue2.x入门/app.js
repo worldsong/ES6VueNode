@@ -35,6 +35,16 @@ var vm = new Vue({
         ]
     },
     methods: {
+        splice: function(){
+            var indexToReplace = 0;
+            var newBook = {
+                title: 'New Entertaining Kids Book',
+                price: 4.99,
+                id: 0,
+                genres: ['kids', 'fiction']
+            };
+            this.books.splice(indexToReplace, 1, newBook); // 第二种触发视图更新的方法。
+        },
         set: function () {
           var indexToReplace = 0;
           var newBook = {
@@ -43,7 +53,7 @@ var vm = new Vue({
               id: 0,
               genres: ['kids', 'fiction']
           };
-          Vue.set(this.books, indexToReplace, newBook)
+          Vue.set(this.books, indexToReplace, newBook); // 第一种触发视图更新方法，使用Vue.set,等同于vm.$set
         },
         teenFilter: function () {
             this.books = this.books.filter(book => {
