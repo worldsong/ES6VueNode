@@ -35,6 +35,12 @@ var vm = new Vue({
         ]
     },
     methods: {
+        resize: function () {
+            // 错误的方式，不会触发视图更新
+            this.books.length = 1;
+            // 使用splice去调整数组长度
+            this.books.splice(0);
+        },
         splice: function(){
             var indexToReplace = 0;
             var newBook = {
