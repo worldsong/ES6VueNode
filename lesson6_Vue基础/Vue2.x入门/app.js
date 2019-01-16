@@ -41,7 +41,10 @@ var app = new Vue({
                         <p><Strong>Id: </Strong> {{ book.id }}</p>
                         <p><Strong>Title: </Strong> {{ book.title }}</p>
                         <p><Strong>Price: </Strong> {{ book.price }}</p>
-                        <p><Strong>Genres: </Strong> <span v-for="genre in book.genres">{{genre}}</span></p>
+                        <p><Strong>Genres: </Strong> <span v-for="(genre, index) in book.genres">
+                            {{genre}}
+                            <span v-if="index < book.genres.length - 1">,</span>
+                        </span></p>
                      </li>
                 </ul>   
             </div>                    
