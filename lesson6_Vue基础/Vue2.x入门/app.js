@@ -15,7 +15,7 @@ var vm = new Vue({
         <ul>
             <li v-for="(prop, key, index) in book">
                 {{index}}) {{key}} : {{prop}}
-                <p v-if="typeof prop == 'function'">{{prop()}}</p>
+                <p v-show="typeof prop == 'function'">{{prop()}}</p>
             </li>
         </ul>      
     `
