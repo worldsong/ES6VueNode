@@ -1,44 +1,35 @@
 var app = new Vue({
     el: '#app',
     data: {
-        bookNameForTemplate: 'Getting to Know Vue.js',
-        bookNameForMethod: 'Getting to Know Vue.js',
-        bookNameForComputed: 'Getting to Know Vue.js',
-        publisher: 'Apress'
+        searchText: '',
+        results: []
     },
     methods: {
-        getTitleBlurb: function () {
-            console.log('Called: getTitleBlurb');
-            return `${this.bookNameForMethod} by ${this.publisher}`
+        search: function () {
+            axios
+                .get(`https://swapi.co/api/starships/?search=${this.searchText}`)
+                .then(response => {
+                    console.log(response)
+                    this.results = response.data;
+                })
         }
     },
-    computed: {
-        TitleBlurb: function () {
-            console.log('Called: titleBlurb');
-            return `${this.bookNameForComputed} by ${this.publisher}`
+    watch: {
+        searchText:function (newSearchText, oldSearchText) {
+            this.search()
         }
     },
     template: `
         <div>
-            <h3>Template based:</h3>
-            <h4>{{bookNameForTemplate}} by {{publisher}}</h4>
-            
-            <h3>Method based:</h3>
-            <h4>{{getTitleBlurb()}}</h4>
-            
-            <h3>Computed Property based:</h3>
-            <h4>{{TitleBlurb}}</h4>
-            
-            <label>Template:
-            <input type="text" v-model="bookNameForTemplate" /></label>
-            <br>
-            
-            <label>Method:
-            <input type="text" v-model="bookNameForMethod" /></label>
-            <br>
-            
-            <label>Computed:
-            <input type="text" v-model="bookNameForComputed" /></label>
+            <label>Search:
+                <input type="text" v-model="searchText" />
+            </label>
+            <h5>Results: <small>{{results.count}}</small></h5>
+            <ul>
+                <li v-for="result in results.results">
+                    {{result.name}}
+                </li>
+            </ul>
         </div>      
     `
 })
