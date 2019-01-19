@@ -4,13 +4,14 @@ var app = new Vue({
         show: true
     },
     methods: {
-      toggle: function () {
-          this.show = !this.show
+      setShow: function (newValue) {
+          this.show = newValue
       }
     },
     template: `
         <div>
-            <h1 v-on:click="toggle">Toggle</h1>
+            <h1 v-on:click="setShow(true)">Show</h1>
+            <h1 v-on:click="setShow(false)">Hide</h1>
             <p v-show="show">Hide and show this message by clicking.</p>
         </div>
     `
