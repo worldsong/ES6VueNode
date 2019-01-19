@@ -9,7 +9,7 @@ var app = new Vue({
                 <h4>Outer</h4>
                 <div v-on:click="messages.push('Middle')">
                     <h4>Middle</h4>
-                    <div v-on:click="messages.push('Inner A')">
+                    <div v-on:click.stop="messages.push('Inner A')">
                         <h4>Inner A</h4>
                     </div>
                     <div v-on:click="messages.push('Inner B')">
