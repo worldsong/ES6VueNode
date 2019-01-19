@@ -1,32 +1,31 @@
 var app = new Vue({
     el: '#app',
     data: {
-        messages: []
+        searchText: '',
+        results: []
+    },
+    methods: {
+        search: function () {
+            axios
+                .get(`https://swapi.co/api/starships/?search=${this.searchText}`)
+                .then(response => {
+                    this.results = response.data;
+                })
+        }
     },
     template: `
         <div>
-            <div v-on:click="messages.push('Outer')">
-                <h4>Outer</h4>
-                <div v-on:click="messages.push('Middle')">
-                    <h4>Middle</h4>
-                    <div v-on:click.stop="messages.push('Inner A')">
-                        <h4>Inner A</h4>
-                    </div>
-                    <div v-on:click="messages.push('Inner B')">
-                        <h4>Inner B</h4>
-                    </div>
-                </div>
-            </div>
+            <label>Search:
+                <input type="text" v-model="searchText" v-on:keyup.enter="search" />
+            </label>
             
-            <p>
-                Last clicked:
-                <ol>
-                   <li v-for="message in messages">
-                    {{message}}
-                   </li> 
-                </ol>
-            </p>
-            <input type="button" v-on:click="messages=[]" value="Clear">
+            <h5>Results: <small>{{results.count}}</small></h5>
+            
+            <ul>
+                <li v-for="result in results.results">
+                    {{ result.name }}
+                </li>
+            </ul>
         </div>
     `
 })
