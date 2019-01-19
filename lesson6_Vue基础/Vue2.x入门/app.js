@@ -28,6 +28,17 @@ var app = new Vue({
             
             <h3>Computed Property based:</h3>
             <h4>{{TitleBlurb}}</h4>
+            
+            <label>Template:
+            <input type="text" v-model="bookNameForTemplate" /></label>
+            <br>
+            
+            <label>Method:
+            <input type="text" v-model="bookNameForMethod" /></label>
+            <br>
+            
+            <label>Computed:
+            <input type="text" v-model="bookNameForComputed" /></label>
         </div>      
     `
 })
