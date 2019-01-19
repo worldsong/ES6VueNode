@@ -16,7 +16,7 @@ var app = new Vue({
     template: `
         <div>
             <label>Search:
-                <input type="text" v-model="searchText" v-on:keyup.enter="search" />
+                <input type="text" v-model="searchText" v-on:keyup.enter.esc.up="search" />
             </label>
             
             <h5>Results: <small>{{results.count}}</small></h5>
