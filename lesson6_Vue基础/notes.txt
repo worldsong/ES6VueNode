@@ -139,3 +139,18 @@ key代表属性的名称。
 使用watch属性可以监听数据变化，
 对于复杂对象，可以使用watch的deep属性。
 要立即调用监听处理程序，可以使用immediate:true,这样可以保证监听处理程序至少被调用一次。
+
+事件
+v-on:eventName="handleEvent"
+eventName 表示的是事件名称；
+handleEvent 表示的是事件处理函数。
+内联处理器中的方法及参数传递，注意 $event;
+事件修饰符
+按键修饰符
+系统修饰符，可以使用如下修饰符来实现仅在按下相应按键时才触发鼠标或者键盘事件的监听器
+.ctrl
+.alt
+.shift
+.meta
+
+
