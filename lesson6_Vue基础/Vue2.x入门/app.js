@@ -2,21 +2,26 @@ var app = new Vue({
     el: '#app',
     data: {
         searchText: '',
-        results: []
+        results: [],
+        history: {}
     },
     methods: {
         search: function () {
             axios
                 .get(`https://swapi.co/api/starships/?search=${this.searchText}`)
                 .then(response => {
-                    console.log(response)
                     this.results = response.data;
+                    this.history[this.searchText] = this.results;
                 })
         }
     },
     watch: {
         searchText:function (newSearchText, oldSearchText) {
-            this.search()
+            if(this.history[newSearchText]){
+                this.results = this.history[newSearchText]
+            } else {
+                this.search()
+            }
         }
     },
     template: `
