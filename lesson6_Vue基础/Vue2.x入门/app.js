@@ -3,9 +3,14 @@ var app = new Vue({
     data: {
         show: true
     },
+    methods: {
+      toggle: function () {
+          this.show = !this.show
+      }
+    },
     template: `
         <div>
-            <h1 v-on:click="show = !show">Toggle</h1>
+            <h1 v-on:click="toggle">Toggle</h1>
             <p v-show="show">Hide and show this message by clicking.</p>
         </div>
     `
