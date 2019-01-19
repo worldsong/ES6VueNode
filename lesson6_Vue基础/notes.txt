@@ -130,3 +130,12 @@ push(), pop(), shift(), unshift(), splice(), sort(), reverse(); 可以放心使�
 在对象上使用v-for指令和在数组上的区别在于： 它可以接收三个参数：value, key, index.
 value和index的使用两者一致。
 key代表属性的名称。
+
+计算属性和侦听器：
+使用template、methods、computed三种方式渲染数据产生一样的结果。
+但是在页面重绘的时候会有所不同；
+重绘【重新渲染】会引起所绑定的methods里的方法每次都运行。
+
+使用watch属性可以监听数据变化，
+对于复杂对象，可以使用watch的deep属性。
+要立即调用监听处理程序，可以使用immediate:true,这样可以保证监听处理程序至少被调用一次。
