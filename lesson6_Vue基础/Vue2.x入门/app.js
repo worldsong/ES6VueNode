@@ -12,7 +12,7 @@ var app = new Vue({
             handler: function (newBook, oldBook) {
                 console.log('Book Changed');
             },
-            deep: true
+            immediate: true
         },
     },
     template: `
