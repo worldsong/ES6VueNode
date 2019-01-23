@@ -1,23 +1,30 @@
-new Vue({
-    el:'#app',
+var one = new Vue({
+    el:'#vue-app-one',
     data: {
-        health: 100, // 血量初始值
-        ended: false
-    },
-    methods: {
-        punch: function () {
-            console.log('打')
-            this.health -= 10;
-            if(this.health <=0 ){
-                this.ended = true;
-            }
-        },
-        restart: function () {
-            this.health = 100;
-            this.ended = false;
-        }
+        title: 'Vue app One'
     },
     computed: {
+        greet: function () {
+            return 'Hello, From app one :)'
+        }
+    }
+});
 
+var two = new Vue({
+    el:'#vue-app-two',
+    data: {
+        title: 'Vue app Two'
+    },
+    computed: {
+        greet: function () {
+            return 'Hello, From app Two :)'
+        }
+    },
+    methods: {
+        changeTitle: function () {
+            one.title = 'Title Changed.'
+        }
     }
 })
+
+two.title = 'Changed from outside'
