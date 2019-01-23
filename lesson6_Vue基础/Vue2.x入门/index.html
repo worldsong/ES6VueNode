@@ -7,11 +7,13 @@
 <body>
     <!-- Div to Mount App -->
     <div id="app">
-        <h1>键盘事件</h1>
+        <h1>键盘事件 /input / select / textarea</h1>
         <label>Name:  </label>
-        <input type="text" v-on:keyup.enter="logName">
+        <input ref="name" type="text" v-on:keyup.enter="logName">
+        <span>{{name}}</span>
         <label>Age:  </label>
-        <input type="text" v-on:keyup.alt.enter="logAge">
+        <input ref="age" type="text" v-on:keyup.alt.enter="logAge">
+        <span>{{age}}</span>
     </div>
 
     <!-- Reference to Vue.js library -->
