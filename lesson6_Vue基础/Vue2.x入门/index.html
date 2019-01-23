@@ -9,10 +9,10 @@
     <div id="app">
         <h1>键盘事件 /input / select / textarea</h1>
         <label>Name:  </label>
-        <input ref="name" type="text" v-on:keyup.enter="logName">
+        <input v-model="name" type="text">
         <span>{{name}}</span>
         <label>Age:  </label>
-        <input ref="age" type="text" v-on:keyup.alt.enter="logAge">
+        <input v-model="age" type="text">
         <span>{{age}}</span>
     </div>
 
