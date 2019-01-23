@@ -2,13 +2,19 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <h1>{{name}}</h1>
+    <user></user>
     <p>{{message}}</p>
   </div>
 </template>
 
 <script>
+  import User from './components/User.vue'
+
 export default {
   name: 'app',
+    components: {
+      'user': User
+    },
   data(){
       return {
           name: 'Song',
