@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue.js 基础</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <!-- Div to Mount App -->
     <div id="app">
-        <h1>键盘事件 /input / select / textarea</h1>
-        <label>Name:  </label>
-        <input v-model="name" type="text">
-        <span>{{name}}</span>
-        <label>Age:  </label>
-        <input v-model="age" type="text">
-        <span>{{age}}</span>
+        <h1>动态绑定CSS</h1>
+<!--        <h2>Example 1</h2>
+        <div v-on:click="available = !available" v-bind:class="{available: available}">
+            <span>Song</span>
+        </div>-->
+        <h2>Example 2</h2>
+        <button v-on:click="nearby = !nearby">Toggle nearby</button>
+        <button v-on:click="available = !available">Toggle available</button>
+        <div v-bind:class="{available: available,nearby: nearby}">
+            <span>Song</span>
+        </div>
     </div>
 
     <!-- Reference to Vue.js library -->

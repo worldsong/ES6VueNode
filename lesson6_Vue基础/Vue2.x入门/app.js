@@ -1,10 +1,11 @@
 new Vue({
     el:'#app',
     data: {
-        name: '',
-        age: ''
+        available: false,
+        nearby: false
     },
     methods: {
 
-    }
+    },
+
 })
