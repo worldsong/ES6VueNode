@@ -6,7 +6,13 @@
 </head>
 <body>
     <!-- Div to Mount App -->
-    <div id="app"></div>
+    <div id="app">
+        <h1>键盘事件</h1>
+        <label>Name:  </label>
+        <input type="text" v-on:keyup.enter="logName">
+        <label>Age:  </label>
+        <input type="text" v-on:keyup.alt.enter="logAge">
+    </div>
 
     <!-- Reference to Vue.js library -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

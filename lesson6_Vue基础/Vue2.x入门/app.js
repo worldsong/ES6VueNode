@@ -1,31 +1,15 @@
-var app = new Vue({
-    el: '#app',
+new Vue({
+    el:'#app',
     data: {
-        searchText: '',
-        results: []
+        name: '',
+        age: ''
     },
     methods: {
-        search: function () {
-            axios
-                .get(`https://swapi.co/api/starships/?search=${this.searchText}`)
-                .then(response => {
-                    this.results = response.data;
-                })
+        logName: function () {
+            console.log('you entered your name');
+        },
+        logAge: function () {
+            console.log('you entered your age');
         }
-    },
-    template: `
-        <div>
-            <label>Search:
-                <input type="text" v-model="searchText" v-on:keyup.ctrl.enter="search" />
-            </label>
-            
-            <h5>Results: <small>{{results.count}}</small></h5>
-            
-            <ul>
-                <li v-for="result in results.results">
-                    {{ result.name }}
-                </li>
-            </ul>
-        </div>
-    `
+    }
 })
