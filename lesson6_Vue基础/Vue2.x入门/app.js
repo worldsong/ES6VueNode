@@ -1,3 +1,6 @@
+var data = {
+    name: 'Song'
+}
 Vue.component('greeting', {
     template: `
         <div>
@@ -6,9 +9,7 @@ Vue.component('greeting', {
         </div>
     `,
     data() {
-        return {
-            name: 'Song'
-        }
+        return data;
     },
     methods: {
         changeName: function () {
