@@ -8,13 +8,9 @@
 </template>
 
 <script>
-  import User from './components/User.vue'
 
 export default {
   name: 'app',
-    components: {
-      'user': User
-    },
   data(){
       return {
           name: 'Song',
