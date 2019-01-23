@@ -1,26 +1,34 @@
 <template>
-  <div id="app">
-    <h1>{{name}}</h1>
-    <user></user>
-    <p>{{message}}</p>
-  </div>
+    <div id="app">
+        <app-header></app-header>
+        <app-user></app-user>
+        <app-footer></app-footer>
+    </div>
 </template>
 
 <script>
+    import Header from './components/Header.vue'
+    import User from './components/User.vue'
+    import Footer from './components/Footer.vue'
 
-export default {
-  name: 'app',
-  data(){
-      return {
-          name: 'Song',
-          message: 'Hello, Welcome to Vue.js'
-      }
-  }
-}
+    export default {
+        name: 'app',
+        components: {
+            'app-header': Header,
+            'app-user': User,
+            'app-footer': Footer
+        },
+        data() {
+            return {
+                name: 'Song',
+                message: 'Hello, Welcome to Vue.js'
+            }
+        }
+    }
 </script>
 
 <style scoped>
-h1 {
-  color: crimson;
-}
+    h1 {
+        color: crimson;
+    }
 </style>
