@@ -24,7 +24,8 @@ var app = new Vue({
             file: ''
         },
         fileName: '',
-        text:''
+        text:'',
+        select: ''
     },
     methods: {
         fileChanged: function () {
