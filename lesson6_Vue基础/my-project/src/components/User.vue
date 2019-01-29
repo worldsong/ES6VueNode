@@ -9,9 +9,17 @@
 
 <script>
 export default {
+//    props: ["users"],
+    // 更严谨的写法
+    props: {
+      users: {
+          type: Array,
+          required: true
+      }
+    },
   data(){
       return {
-          users: ['Song', 'Frank', 'Vico']
+
       }
   }
 }

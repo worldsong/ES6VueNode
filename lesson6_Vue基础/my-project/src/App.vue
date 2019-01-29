@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <app-header></app-header>
-        <app-user></app-user>
+        <app-user v-bind:users="users"></app-user>
         <app-footer></app-footer>
     </div>
 </template>
@@ -21,7 +21,8 @@
         data() {
             return {
                 name: 'Song',
-                message: 'Hello, Welcome to Vue.js'
+                message: 'Hello, Welcome to Vue.js',
+                users: ['Song', 'Frank', 'Vico']
             }
         }
     }
