@@ -10,11 +10,17 @@
     <div id="app">
         <h1>Inputs</h1>
 
-        <h4>Checkbox</h4>
-        <input type="checkbox" v-model="inputs.checkbox" value="myCheckBox" id="myCheckBox" />
-        <label for="myCheckBox">My Check Box</label>
+        <h4>Checkboxes</h4>
+        <input v-model="inputs.checkboxes" type="checkbox" value="eeny" id="eeny" />
+        <label for="eeny">Enny</label>
+        <input v-model="inputs.checkboxes" type="checkbox" value="meeny" id="meeny" />
+        <label for="meeny">Meenny</label>
+        <input v-model="inputs.checkboxes" type="checkbox" value="miny" id="miny" />
+        <label for="miny">Miny</label>
+        <input v-model="inputs.checkboxes" type="checkbox" value="mo" id="mo" />
+        <label for="mo">Mo</label>
         <p>
-            <strong>Checkbox:</strong> {{inputs.checkbox}}
+            <strong>Checkboxes:</strong> {{inputs.checkboxes}}
         </p>
 
     </div>

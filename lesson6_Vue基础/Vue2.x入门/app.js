@@ -6,7 +6,8 @@ var app = new Vue({
             numberAsString: 0,
             numberAsNumber: 0,
             password: '',
-            checkbox: false
+            checkbox: false,
+            checkboxes: []
         }
     }
 })
