@@ -10,10 +10,22 @@
     <div id="app">
         <h1>Inputs</h1>
 
-        <h4>Text</h4>
-        <input type="text" v-model="inputs.text" />
+        <h4>Number as String</h4>
+        <input type="number" v-model="inputs.numberAsString" />
         <p>
-            <strong>Text: </strong> {{inputs.text}}
+            <strong>Number:</strong> {{inputs.numberAsString}}
+        </p>
+        <p>
+            <strong>Typeof numberAsString:</strong> {{typeof inputs.numberAsString}}
+        </p>
+
+        <h4>Number as Number</h4>
+        <input type="number" v-model.number="inputs.numberAsNumber" />
+        <p>
+            <strong>Number:</strong> {{inputs.numberAsNumber}}
+        </p>
+        <p>
+            <strong>Typeof numberAsNumber:</strong> {{typeof inputs.numberAsNumber}}
         </p>
     </div>
 

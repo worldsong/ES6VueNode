@@ -3,6 +3,8 @@ var app = new Vue({
     data: {
         inputs: {
             text: '',
+            numberAsString: 0,
+            numberAsNumber: 0,
         }
     }
 })
