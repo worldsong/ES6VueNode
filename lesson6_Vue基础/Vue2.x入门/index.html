@@ -10,10 +10,13 @@
 <div id="app">
     <h1>Inputs</h1>
 
-    <h4>Lazy</h4>
-    <input v-model.lazy="lazy" type="text" />
+    <h4>Number</h4>
+    <input v-model.number="number" type="text" />
     <p>
-        <strong>Lazy:</strong> {{lazy}}
+        <strong>Number:</strong> {{number}}
+    </p>
+    <p>
+        <strong>Type of Number:</strong> {{typeof number}}
     </p>
 </div>
 <!-- Reference to Vue.js library -->

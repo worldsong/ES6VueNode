@@ -28,6 +28,8 @@ var app = new Vue({
         select: '',
         multiSelect: [],
         lazy: '',
+        number: 2,
+
     },
     methods: {
         fileChanged: function () {
