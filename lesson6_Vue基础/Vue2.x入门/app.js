@@ -10,6 +10,17 @@ var app = new Vue({
             checkboxes: [],
             radios: '',
             radiosPreset: 'rollout',
+            radiosDynamic: '',
+            radiosDynamicOptions: [
+                {
+                    label: 'Blue',
+                    value: 'Light'
+                },
+                {
+                    label: 'Red',
+                    value: 'Dark'
+                }
+            ],
         }
     }
 })
