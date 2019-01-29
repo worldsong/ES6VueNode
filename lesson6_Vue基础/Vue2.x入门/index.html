@@ -10,11 +10,13 @@
     <div id="app">
         <h1>Inputs</h1>
 
-        <h4>Password</h4>
-        <input type="password" v-model="inputs.password" />
+        <h4>Checkbox</h4>
+        <input type="checkbox" v-model="inputs.checkbox" value="myCheckBox" id="myCheckBox" />
+        <label for="myCheckBox">My Check Box</label>
         <p>
-            <strong>Password:</strong> {{inputs.password}}
+            <strong>Checkbox:</strong> {{inputs.checkbox}}
         </p>
+
     </div>
 
     <!-- Reference to Vue.js library -->
