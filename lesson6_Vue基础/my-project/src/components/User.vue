@@ -4,6 +4,7 @@
         <ul>
             <li v-for="user in users">{{ user }}</li>
         </ul>
+        <button v-on:click="deleteUser">删除</button>
     </div>
 </template>
 
@@ -17,11 +18,12 @@ export default {
           required: true
       }
     },
-  data(){
-      return {
+    methods: {
+        deleteUser: function () {
+            this.users.pop();
+        }
+    }
 
-      }
-  }
 }
 </script>
 

@@ -2,6 +2,7 @@
     <div id="app">
         <app-header></app-header>
         <app-user v-bind:users="users"></app-user>
+        <app-user v-bind:users="users"></app-user>
         <app-footer></app-footer>
     </div>
 </template>
