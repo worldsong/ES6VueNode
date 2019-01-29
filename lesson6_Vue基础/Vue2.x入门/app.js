@@ -9,7 +9,7 @@ var app = new Vue({
             checkbox: false,
             checkboxes: [],
             radios: '',
-
+            radiosPreset: 'rollout',
         }
     }
 })
