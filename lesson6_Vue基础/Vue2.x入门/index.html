@@ -6,17 +6,16 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<h1>Multiple Vue instances</h1>
     <!-- Div to Mount App -->
-    <div id="vue-app-one">
-       <h2>Vue App One</h2>
-       <greeting></greeting>
-    </div>
+    <div id="app">
+        <h1>Inputs</h1>
 
-<div id="vue-app-two">
-    <h2>Vue App Two</h2>
-    <greeting></greeting>
-</div>
+        <h4>Text</h4>
+        <input type="text" v-model="inputs.text" />
+        <p>
+            <strong>Text: </strong> {{inputs.text}}
+        </p>
+    </div>
 
     <!-- Reference to Vue.js library -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
