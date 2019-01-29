@@ -1,14 +1,26 @@
 <template>
     <header>
-        <h1>{{title}}</h1>
+        <h1 v-on:click="changeTitle">{{title}}</h1>
     </header>
 </template>
 
 <script>
     export default {
+        props: {
+            title: {
+                type: String,
+                required: true
+            }
+        },
         data(){
             return {
-                title:'Vue Song'
+
+            }
+        },
+        methods: {
+            changeTitle: function () {
+                console.log('你进行了改名操作。')
+                this.$emit('changeTitle', 'Vue Hello')
             }
         }
     }

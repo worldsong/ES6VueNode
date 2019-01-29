@@ -1,7 +1,6 @@
 <template>
     <div id="app">
-        <app-header></app-header>
-        <app-user v-bind:users="users"></app-user>
+        <app-header v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-header>
         <app-user v-bind:users="users"></app-user>
         <app-footer></app-footer>
     </div>
@@ -23,7 +22,13 @@
             return {
                 name: 'Song',
                 message: 'Hello, Welcome to Vue.js',
-                users: ['Song', 'Frank', 'Vico']
+                users: ['Song', 'Frank', 'Vico'],
+                title: 'Vue init Pro'
+            }
+        },
+        methods: {
+            updateTitle: function (updatedTitle) {
+                this.title = updatedTitle;
             }
         }
     }
