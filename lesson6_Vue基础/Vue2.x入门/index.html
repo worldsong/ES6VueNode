@@ -10,17 +10,20 @@
     <div id="app">
         <h1>Inputs</h1>
 
-        <h4>Checkboxes</h4>
-        <input v-model="inputs.checkboxes" type="checkbox" value="eeny" id="eeny" />
-        <label for="eeny">Enny</label>
-        <input v-model="inputs.checkboxes" type="checkbox" value="meeny" id="meeny" />
-        <label for="meeny">Meenny</label>
-        <input v-model="inputs.checkboxes" type="checkbox" value="miny" id="miny" />
-        <label for="miny">Miny</label>
-        <input v-model="inputs.checkboxes" type="checkbox" value="mo" id="mo" />
-        <label for="mo">Mo</label>
+        <h4>Radios</h4>
+        <input v-model="inputs.radios" type="radio" value="rollout" id="rollout" />
+        <label for="rollout">Autobots, transform and roll out!</label>
+        <br>
+        <input v-model="inputs.radios" type="radio" value="decepticons-retreat" id="retreat" />
+        <label for="retreat">Decepticons, retreat!</label>
+        <br>
+        <input v-model="inputs.radios" type="radio" value="go-joe" id="go-joe" />
+        <label for="go-joe">Go Joe!</label>
+        <br>
+        <input v-model="inputs.radios" type="radio" value="cobra-retreat" id="cobraretreat" />
+        <label for="cobraretreat">Cobra retreat. RETREAT!</label>
         <p>
-            <strong>Checkboxes:</strong> {{inputs.checkboxes}}
+            <strong>Radios:</strong> {{inputs.radios}}
         </p>
 
     </div>

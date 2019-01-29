@@ -7,7 +7,9 @@ var app = new Vue({
             numberAsNumber: 0,
             password: '',
             checkbox: false,
-            checkboxes: []
+            checkboxes: [],
+            radios: '',
+
         }
     }
 })
