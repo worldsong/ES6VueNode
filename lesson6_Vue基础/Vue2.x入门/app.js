@@ -5,6 +5,7 @@ var app = new Vue({
             text: '',
             numberAsString: 0,
             numberAsNumber: 0,
+            password: '',
         }
     }
 })
