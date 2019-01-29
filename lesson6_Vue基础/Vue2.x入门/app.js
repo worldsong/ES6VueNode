@@ -21,6 +21,13 @@ var app = new Vue({
                     value: 'Dark'
                 }
             ],
+            file: ''
+        },
+        fileName: '',
+    },
+    methods: {
+        fileChanged: function () {
+            this.fileName = event.target.files[0].name;
         }
     }
 })
