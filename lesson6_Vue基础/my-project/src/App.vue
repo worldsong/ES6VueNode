@@ -22,7 +22,7 @@
             return {
                 name: 'Song',
                 message: 'Hello, Welcome to Vue.js',
-                users: ['Song', 'Frank', 'Vico'],
+                users: ['Song', 'Frank', 'Vico','Tang','Yuan', 'Ming'],
                 title: 'Vue init Pro'
             }
         },
