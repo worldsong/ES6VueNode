@@ -10,13 +10,16 @@
 <div id="app">
     <h1>Inputs</h1>
 
-    <h4>Number</h4>
-    <input v-model.number="number" type="text" />
+    <h4>No Trim</h4>
+    <input v-model="noTrim" type="text" />
     <p>
-        <strong>Number:</strong> {{number}}
+        <strong>No Trim:</strong> "{{noTrim}}"
     </p>
+
+    <h4>Trim</h4>
+    <input v-model.trim="trim" type="text" />
     <p>
-        <strong>Type of Number:</strong> {{typeof number}}
+        <strong>Trim:</strong> "{{trim}}"
     </p>
 </div>
 <!-- Reference to Vue.js library -->
