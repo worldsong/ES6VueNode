@@ -25,7 +25,8 @@ var app = new Vue({
         },
         fileName: '',
         text:'',
-        select: ''
+        select: '',
+        multiSelect: []
     },
     methods: {
         fileChanged: function () {
