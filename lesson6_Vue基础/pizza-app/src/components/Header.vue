@@ -8,14 +8,14 @@
       <ul class="navbar-nav">
         <!--<li><router-link tag="div" class="nav-link" to="/">主页</router-link></li>-->
         <!--<li><router-link class="nav-link" :to="homeLink">主页</router-link></li>-->
-        <li><router-link class="nav-link" to="/">主页</router-link></li>
-        <li><router-link class="nav-link" to="menu">菜单</router-link></li>
-        <li><router-link class="nav-link" to="admin">管理</router-link></li>
-        <li><router-link class="nav-link" to="about">关于我们</router-link></li>
+        <li><router-link class="nav-link" :to="{name: 'homeLink'}">主页</router-link></li>
+        <li><router-link class="nav-link" :to="{name: 'menuLink'}">菜单</router-link></li>
+        <li><router-link class="nav-link" :to="{name: 'adminLink'}">管理</router-link></li>
+        <li><router-link class="nav-link" :to="{name: 'aboutLink'}">关于我们</router-link></li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li><router-link to="login" class="nav-link">登录</router-link></li>
-        <li><router-link to="register" class="nav-link">注册</router-link></li>
+        <li><router-link :to="{name: 'loginLink'}" class="nav-link">登录</router-link></li>
+        <li><router-link :to="{name: 'registerLink'}" class="nav-link">注册</router-link></li>
       </ul>
     </nav>
   </header>
