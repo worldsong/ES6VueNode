@@ -1,8 +1,8 @@
 <template>
     <div>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/hello">HelloWorld</a></li>
+            <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/hello">HelloWorld</router-link></li>
         </ul>
         <router-view></router-view>
     </div>
