@@ -6,8 +6,8 @@
       </a>
       <a href="/" class="navbar-brand">Pizza点餐系统</a>
       <ul class="navbar-nav">
-        <li><a class="nav-link" href="#">主页</a></li>
-        <li><a class="nav-link" href="#">菜单</a></li>
+        <li><a class="nav-link" href="/">主页</a></li>
+        <li><a class="nav-link" href="/menu">菜单</a></li>
         <li><a class="nav-link" href="#">管理</a></li>
         <li><a class="nav-link" href="#">关于我们</a></li>
       </ul>
