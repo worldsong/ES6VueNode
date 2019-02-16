@@ -6,6 +6,10 @@ import App from './App'
 
 import Home from './components/Home.vue'
 import Menu from './components/Menu.vue'
+import Admin from './components/Admin.vue'
+import About from './components/about/About.vue'
+import Login from './components/Login.vue'
+import Register from './components/Register.vue'
 
 Vue.config.productionTip = false
 
@@ -13,7 +17,11 @@ Vue.use(VueRouter);
 
 const routes = [
   {path: '/', component: Home},
-  {path: '/menu', component: Menu}
+  {path: '/menu', component: Menu},
+  {path: '/admin', component: Admin},
+  {path: '/about', component: About},
+  {path: '/login', component: Login},
+  {path: '/register', component: Register},
 ]
 
 const router = new VueRouter({
