@@ -18,6 +18,13 @@
             'app-user': User,
             'app-footer': Footer
         },
+        created(){
+          this.$http.get("http://jsonplaceholder.typicode.com/users")
+              .then((data) => {
+                console.log(data);
+                this.users = data.body;
+              })
+        },
         data() {
             return {
                 name: 'Song',

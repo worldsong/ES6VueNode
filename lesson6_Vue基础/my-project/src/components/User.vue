@@ -2,7 +2,7 @@
     <div>
         <h1>Hello Users</h1>
         <ul>
-            <li v-for="user in users">{{ user }}</li>
+            <li v-for="user in users">{{ user.name }}</li>
         </ul>
         <button v-on:click="deleteUser">删除</button>
     </div>
