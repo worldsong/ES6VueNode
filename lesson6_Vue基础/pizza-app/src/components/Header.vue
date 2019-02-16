@@ -6,6 +6,8 @@
       </a>
       <a href="/" class="navbar-brand">Pizza点餐系统</a>
       <ul class="navbar-nav">
+        <!--<li><router-link tag="div" class="nav-link" to="/">主页</router-link></li>-->
+        <!--<li><router-link class="nav-link" :to="homeLink">主页</router-link></li>-->
         <li><router-link class="nav-link" to="/">主页</router-link></li>
         <li><router-link class="nav-link" to="menu">菜单</router-link></li>
         <li><router-link class="nav-link" to="admin">管理</router-link></li>
@@ -18,3 +20,12 @@
     </nav>
   </header>
 </template>
+<script>
+  export default {
+    data(){
+      return {
+        homeLink: '/'
+      }
+    }
+  }
+</script>
