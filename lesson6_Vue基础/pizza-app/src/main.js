@@ -79,6 +79,10 @@ router.beforeEach((to, from, next) => {
 })
 */
 
+// 后置钩子
+router.afterEach((to, from) => {
+  alert("after each")
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
