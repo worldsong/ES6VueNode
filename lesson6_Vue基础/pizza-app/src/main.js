@@ -50,6 +50,20 @@ const router = new VueRouter({
   mode: 'history'
 })
 
+// 全局守卫
+router.beforeEach((to, from, next) => {
+  // alert("还没有登录，请先登录！");
+  // next();
+  // console.log(to);
+
+  if(to.path== '/login' || to.path == '/register'){
+    next();
+  }else {
+    alert("还没有登录，请先登录！");
+    next('/login');
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
