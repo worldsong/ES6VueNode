@@ -16,7 +16,13 @@ import Phone from './components/about/contact/Phone.vue'
 import PersonName from './components/about/contact/PersonName.vue'
 
 export const routes = [
-  {path: '/',name:"homeLink", component: Home},
+  {path: '/',name:"homeLink", components: {
+      default: Home,
+      'orderingGuide': OrderingGuide,
+      'delivery': Delivery,
+      'history': History
+    }
+  },
   {path: '/menu',name:"menuLink", component: Menu},
   {path: '/admin',name:"adminLink", component: Admin,
     // beforeEnter: (to, from, next) => {
