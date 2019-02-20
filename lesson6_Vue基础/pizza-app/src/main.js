@@ -29,10 +29,10 @@ const routes = [
   {path: '/',name:"homeLink", component: Home},
   {path: '/menu',name:"menuLink", component: Menu},
   {path: '/admin',name:"adminLink", component: Admin},
-  {path: '/about',name:"aboutLink", component: About, children: [
+  {path: '/about',name:"aboutLink", redirect:'/contact' , component: About, children: [
     // {path: '/about/contact', name: "contactLink", component: Contact},
     // {path: 'contact', name: "contactLink", component: Contact},
-    {path: '/contact', name: "contactLink", component: Contact, children: [
+    {path: '/contact', name: "contactLink", redirect:'/personName' , component: Contact, children: [
       {path: 'phone', name: "phoneNumber", component: Phone},
       {path: '/personName', name: "personName", component: PersonName},
     ]},
