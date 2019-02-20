@@ -17,6 +17,10 @@ import Delivery from './components/about/Delivery.vue'
 import History from './components/about/History.vue'
 import OrderingGuide from './components/about/OrderingGuide.vue'
 
+// 三级路由
+import Phone from './components/about/contact/Phone.vue'
+import PersonName from './components/about/contact/PersonName.vue'
+
 Vue.config.productionTip = false
 
 Vue.use(VueRouter);
@@ -28,7 +32,10 @@ const routes = [
   {path: '/about',name:"aboutLink", component: About, children: [
     // {path: '/about/contact', name: "contactLink", component: Contact},
     // {path: 'contact', name: "contactLink", component: Contact},
-    {path: '/contact', name: "contactLink", component: Contact},
+    {path: '/contact', name: "contactLink", component: Contact, children: [
+      {path: 'phone', name: "phoneNumber", component: Phone},
+      {path: '/personName', name: "personName", component: PersonName},
+    ]},
     {path: 'history', name: "historyLink", component: History},
     {path: 'delivery', name: "deliveryLink", component: Delivery},
     {path: 'orderingGuide', name: "orderingGuideLink", component: OrderingGuide}
