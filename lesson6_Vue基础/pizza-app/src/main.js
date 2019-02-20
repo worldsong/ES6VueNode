@@ -28,7 +28,20 @@ Vue.use(VueRouter);
 const routes = [
   {path: '/',name:"homeLink", component: Home},
   {path: '/menu',name:"menuLink", component: Menu},
-  {path: '/admin',name:"adminLink", component: Admin},
+  {path: '/admin',name:"adminLink", component: Admin,
+    beforeEnter: (to, from, next) => {
+      // 路由的独享守卫
+      // alert("非登录状态，不能访问此页面");
+      // next(false);
+
+      if(to.path== '/login' || to.path == '/register'){
+        next();
+      }else {
+        alert("还没有登录，请先登录！");
+        next('/login');
+      }
+    }
+  },
   {path: '/about',name:"aboutLink", redirect:'/contact' , component: About, children: [
     // {path: '/about/contact', name: "contactLink", component: Contact},
     // {path: 'contact', name: "contactLink", component: Contact},
@@ -50,6 +63,7 @@ const router = new VueRouter({
   mode: 'history'
 })
 
+/*
 // 全局守卫
 router.beforeEach((to, from, next) => {
   // alert("还没有登录，请先登录！");
@@ -63,6 +77,7 @@ router.beforeEach((to, from, next) => {
     next('/login');
   }
 })
+*/
 
 /* eslint-disable no-new */
 new Vue({
