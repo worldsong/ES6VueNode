@@ -11,7 +11,18 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes,
-  mode: 'history'
+  mode: 'history',
+  scrollBehavior(to, from, savedPostion){
+    // return {x:0, y: 10000}
+    // return {selector: '.btn'}
+    // console.log(to)
+
+    if(savedPostion){
+      return savedPostion
+    }else {
+      return {x:0, y:0}
+    }
+  }
 })
 
 /*
