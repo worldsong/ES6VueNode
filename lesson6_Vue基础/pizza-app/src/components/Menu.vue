@@ -46,7 +46,7 @@
             <td>{{item.price * item.quantity}}</td>
           </tr>
           </tbody>
-          <p>总价：</p>
+          <p>总价：{{total + "RMB"}}</p>
           <button class="btn btn-success btn-block">提交</button>
         </table>
       </div>
@@ -99,6 +99,16 @@
         }
       }
     },
+    computed: {
+      total(){
+        let totalCost = 0;
+        for( let index in this.baskets){
+          let individualItem = this.baskets[index];
+          totalCost += individualItem.quantity * individualItem.price
+        }
+        return totalCost;
+      }
+    },
     methods: {
       addToBasket(item, option){
         this.baskets.push({
@@ -111,11 +121,14 @@
       decreaseQuantity(item){
         item.quantity--;
         if(item.quantity <=0 ){
-          this.baskets.splice(this.baskets.indexOf(item), 1)
+          this.removeFromBasket(item);
         }
       },
       increaseQuantity(item){
         item.quantity++
+      },
+      removeFromBasket(item){
+        this.baskets.splice(this.baskets.indexOf(item), 1)
       }
     }
   }
