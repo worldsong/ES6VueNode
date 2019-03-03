@@ -17,35 +17,42 @@
           <tr v-for="option in item.options" :key = "option.size">
             <td>{{option.size}}</td>
             <td>{{option.price}}</td>
-            <td><button class="btn btn-sm btn-outline-success">+</button></td>
+            <td><button
+              @click="addToBasket(item, option)"
+              class="btn btn-sm btn-outline-success">+</button></td>
           </tr>
         </tbody>
       </table>
     </div>
     <!--购物车-->
     <div class="col-sm-12 col-md-4">
-      <table class="table">
-        <thead class="thead-default">
+      <div v-if="baskets.length > 0">
+        <table class="table">
+          <thead class="thead-default">
           <tr>
             <th>数量</th>
             <th>种类</th>
             <th>价格</th>
           </tr>
-        </thead>
-        <tbody>
+          </thead>
+          <tbody v-for="item in baskets" :key="item.name + item.size">
           <tr>
             <td>
               <button class="btn btn-sm">-</button>
-              <span>1</span>
+              <span>{{item.quantity}}</span>
               <button class="btn btn-sm">+</button>
             </td>
-            <td>榴莲pizza9寸</td>
-            <td>38</td>
+            <td>{{item.name}}{{item.size}}</td>
+            <td>{{item.price * item.quantity}}</td>
           </tr>
-        </tbody>
-        <p>总价：</p>
-        <button class="btn btn-success btn-block">提交</button>
-      </table>
+          </tbody>
+          <p>总价：</p>
+          <button class="btn btn-success btn-block">提交</button>
+        </table>
+      </div>
+      <div v-else>
+        {{basketText}}
+      </div>
     </div>
   </div>
 </template>
@@ -53,6 +60,8 @@
   export default {
     data(){
       return {
+        baskets: [],
+        basketText: "购物车没有任何商品",
         getMenuItems: {
           1: {
             'name': '榴莲pizza',
@@ -88,6 +97,16 @@
             }]
           }
         }
+      }
+    },
+    methods: {
+      addToBasket(item, option){
+        this.baskets.push({
+          name: item.name,
+          size: option.size,
+          price: option.price,
+          quantity: 1
+        })
       }
     }
   }
