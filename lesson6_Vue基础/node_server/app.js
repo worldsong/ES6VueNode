@@ -34,6 +34,10 @@ app.post('/users.json', function (req, res) {
     res.send(200);
 })
 
+app.get('/menu.json', function (req, res) {
+    res.sendFile(path.join(__dirname, "./database/menu.json"));
+})
+
 app.listen(3000, function () {
     console.log('Server is starting on port 3000.')
 })
