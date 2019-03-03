@@ -4,8 +4,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App'
 import {routes} from './routes'
+import axios from 'axios'
 
 Vue.config.productionTip = false
+
+axios.defaults.baseURL = 'http://localhost:3000'
 
 Vue.use(VueRouter);
 

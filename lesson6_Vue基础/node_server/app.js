@@ -20,10 +20,12 @@ app.all('*', function(req, res, next) {
     next();
 });
 
+// 供登录服务使用
 app.get('/users.json', function (req, res) {
     res.sendFile(path.join(__dirname, "./database/users.json"));
 })
 
+// 用户注册接口
 app.post('/users.json', function (req, res) {
     console.log(req.body);
     var pass_message = require(path.join(__dirname, "./database/users.json"));
