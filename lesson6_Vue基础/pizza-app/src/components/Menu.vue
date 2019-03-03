@@ -85,14 +85,16 @@
 //        axios.get('http://localhost:3000/menu.json')
 //          .then(res => this.getMenuItems = res.data)
 
-        // 使用fetch
-        fetch("http://localhost:3000/menu.json")
-          .then(res => {
-            return res.json()
-          })
-          .then(data => {
-            this.getMenuItems = data
-          })
+//        // 使用fetch
+//        fetch("http://localhost:3000/menu.json")
+//          .then(res => {
+//            return res.json()
+//          })
+//          .then(data => {
+//            this.getMenuItems = data
+//          })
+        this.http.get("http://localhost:3000/menu.json")
+          .then(res => this.getMenuItems = res.data)
       },
       addToBasket(item, option){
         let basket = {

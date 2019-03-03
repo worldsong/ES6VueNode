@@ -10,6 +10,9 @@ Vue.config.productionTip = false
 
 axios.defaults.baseURL = 'http://localhost:3000'
 
+// 配置Vue原型（在任何组件中都可以正常使用axios）
+Vue.prototype.http = axios;
+
 Vue.use(VueRouter);
 
 const router = new VueRouter({

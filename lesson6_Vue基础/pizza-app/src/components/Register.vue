@@ -40,7 +40,7 @@
   </div>
 </template>
 <script>
-  import axios from 'axios'
+//  import axios from 'axios'
   export default {
     data(){
       return {
@@ -57,7 +57,7 @@
             password: this.password,
             confirmPassword: this.confirmPassword
           }
-          axios.post('http://localhost:3000/users.json', formData)
+          this.http.post('http://localhost:3000/users.json', formData)
             .then(res => this.$router.push({name: 'loginLink'}))
         } else {
           alert("两次密码不一致！")
