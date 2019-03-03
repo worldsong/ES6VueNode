@@ -111,12 +111,25 @@
     },
     methods: {
       addToBasket(item, option){
-        this.baskets.push({
+        let basket = {
           name: item.name,
           size: option.size,
           price: option.price,
           quantity: 1
-        })
+        }
+        if( this.baskets.length > 0){
+          // 过滤数据
+          let result = this.baskets.filter( (basket) => {
+            return (basket.name === item.name && basket.price === option.price)
+          })
+          if(result != null && result.length > 0){
+            result[0].quantity++
+          } else {
+            this.baskets.push(basket);
+          }
+        }else {
+          this.baskets.push(basket);
+        }
       },
       decreaseQuantity(item){
         item.quantity--;
