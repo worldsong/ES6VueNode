@@ -57,7 +57,7 @@
   </div>
 </template>
 <script>
-  import axios from 'axios'
+//  import axios from 'axios'
 
   export default {
     data(){
@@ -82,8 +82,17 @@
     },
     methods: {
       fetchMenuData(){
-        axios.get('http://localhost:3000/menu.json')
-          .then(res => this.getMenuItems = res.data)
+//        axios.get('http://localhost:3000/menu.json')
+//          .then(res => this.getMenuItems = res.data)
+
+        // 使用fetch
+        fetch("http://localhost:3000/menu.json")
+          .then(res => {
+            return res.json()
+          })
+          .then(data => {
+            this.getMenuItems = data
+          })
       },
       addToBasket(item, option){
         let basket = {
