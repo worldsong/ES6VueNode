@@ -38,6 +38,13 @@ app.get('/menu.json', function (req, res) {
     res.sendFile(path.join(__dirname, "./database/menu.json"));
 })
 
+app.post('/menu.json', function (req, res) {
+    var old_menu = require(path.join(__dirname, './database/menu.json'));
+    old_menu[req.body.name] = req.body;
+    fs.writeFile('./database/menu.json', JSON.stringify(old_menu));
+    res.send(200);
+})
+
 app.listen(3000, function () {
     console.log('Server is starting on port 3000.')
 })
