@@ -45,6 +45,15 @@ app.post('/menu.json', function (req, res) {
     res.send(200);
 })
 
+app.delete('/menu.json/:id', function (req, res) {
+    console.log(req.params.id)
+    var old_menu = require(path.join(__dirname, './database/menu.json'));
+    delete old_menu[req.params.id]
+    console.log(old_menu);
+    fs.writeFile('./database/menu.json', JSON.stringify(old_menu));
+    res.send(200);
+})
+
 app.listen(3000, function () {
     console.log('Server is starting on port 3000.')
 })
