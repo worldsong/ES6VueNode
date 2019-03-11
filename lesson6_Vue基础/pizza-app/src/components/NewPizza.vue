@@ -71,7 +71,7 @@
 
         // 后台交互，提交新增菜单表单
         this.http.post("menu.json", data)
-          .then(res => this.$router.push({name: "menuLink"}))
+          .then(res => this.$store.commit("pushToMenuItems", data))
       }
     }
   }

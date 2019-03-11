@@ -32,7 +32,7 @@
     data(){
       return {
         name: 'Song',
-        getMenuItems:[]
+//        getMenuItems:[]
       }
     },
     components: {
@@ -47,13 +47,34 @@
             'Content-type': 'application/json'
           }
         })
-          .then(res => this.$router.push({name: "menuLink"}))
+          .then(res => this.$store.commit('removeMenuItems', item))
           .catch(err => console.log(err))
       }
     },
+    computed: {
+      getMenuItems: {
+        // 在Vuex中获取数据
+        get(){
+          return this.$store.getters.getMenuItems;
+        },
+        set(){
+
+        }
+      }
+    },
     created(){
-      this.http.get("http://localhost:3000/menu.json")
-        .then(res => this.getMenuItems = res.data)
+      fetch("http://localhost:3000/menu.json")
+        .then(res => {
+          return res.json();
+        })
+        .then(data => {
+          let menuArray = [];
+          for(let key in data){
+            data[key].id = key;
+            menuArray.push(data[key])
+          }
+          this.$store.commit('setMenuItems', menuArray)
+        })
     },
     beforeRouteLeave(to, from, next){
       if(confirm("确定离开吗？") == true){

@@ -64,10 +64,13 @@
       return {
         baskets: [],
         basketText: "购物车没有任何商品",
-        getMenuItems: {}
+//        getMenuItems: {}
       }
     },
     computed: {
+      getMenuItems(){
+        return this.$store.getters.getMenuItems
+      },
       total(){
         let totalCost = 0;
         for( let index in this.baskets){
@@ -93,8 +96,9 @@
 //          .then(data => {
 //            this.getMenuItems = data
 //          })
+        // 将请求下来的数据保存到Vuex中
         this.http.get("http://localhost:3000/menu.json")
-          .then(res => this.getMenuItems = res.data)
+          .then(res => this.$store.commit("setMenuItems", res.data))
       },
       addToBasket(item, option){
         let basket = {

@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 import App from './App'
 import {routes} from './routes'
 import axios from 'axios'
+import {store} from "./store/store.js";
 
 Vue.config.productionTip = false
 
@@ -55,6 +56,7 @@ router.beforeEach((to, from, next) => {
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
